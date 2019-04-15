@@ -1,0 +1,259 @@
+/* SHARED STYLES */
+
+html, body {
+  font-size: 18px;
+  line-height: 1.4rem;
+  font-family: "Helvetica", sans-serif;
+}
+
+.container {
+  display: flex;
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* BANNER - INCLUDES HEADER, NAVIGATION AND SLOGAN */
+
+.banner {
+  height: 31rem;
+  background-image: url("../images/glasses-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner .container {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  background-color: cadetblue;
+  color: white;
+}
+
+.company {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 1.5rem;
+  margin-right: 1rem;
+  margin-left: 2rem;
+}
+
+nav span {
+  padding-right: 2rem;
+}
+
+.small-menu {
+  display: none;
+}
+
+.slogan {
+  width: max-content;
+  padding: 1.5rem 5rem;
+  margin-top: 10rem;
+  margin-right: -2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  background-color: white;
+  color: black;
+}
+
+/* SERVICES */
+
+.services {
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+  width: 5rem;
+  margin: 0 3rem;
+}
+
+.service p {
+  text-align: center;
+}
+
+.exams img {
+  width: 3.5rem;
+}
+
+.fittings img, .delivery img {
+  width: 5rem;
+}
+
+/* DETAILS - INCLUDES PHILOSOPHY AND CONTACT INFORMATION */
+
+.details {
+  justify-content: flex-start;
+  margin-top: 3rem;
+}
+
+.philosophy, .appointments {
+  width: 35%;
+  margin-right: 5%;
+}
+
+.label {
+  width: 10rem;
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 1rem;
+  background-color: cadetblue;
+  color: white;
+  font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 4rem 0;
+}
+
+footer.container {
+  margin-top: 5rem;
+  background-color: azure;
+}
+
+footer img {
+  padding-left: 2rem; /* 2rem of space is already given by the .logo rule. */
+}
+
+/* MEDIA QUERIES */
+
+/* 945px is the screen width at which the navigation menu starts being
+hidden from view. */
+@media only screen and (max-width: 945px) {
+
+  /* use the full screen width rather than the 960px container width. */
+  .container {
+    width: 100%;
+  }
+
+  /* move header to top of screen */
+  header {
+    margin-top: 0;
+  }
+
+  .banner {
+    height: 22rem;
+  }
+
+  .slogan {
+    width: max-content;
+    padding: 0.75rem 4rem;
+    margin-top: 5rem;
+    margin-right: 2rem;
+    font-size: 1.33rem;
+  }
+
+  /* move 'philosophy' and 'location' to page centre */
+  .details {
+    justify-content: center;
+  }
+}
+
+/* 645px is the screen width below which the menu starts wrapping onto
+a new line, and the 'details' paragraphs become too narrow for readability. */
+@media only screen and (max-width: 645px) {
+
+  /* hide the full menu... */
+  nav span {
+    display: none;
+  }
+
+  /* ... and show the small menu. */
+  .small-menu {
+    display: inline;
+  }
+
+  /* hide the company name from the header */
+  .company span {
+    display: none;
+  }
+
+  .banner {
+    height: 17rem;
+    background-position: 20%; /* move man's face further into the screen */
+  }
+
+  .slogan {
+    width: 100%; /* slogan should occupy full screen width */
+    padding: 1rem 0;
+    margin: 9rem 0 0 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .services {
+    flex-direction: column; /* show the services vertically */
+    align-items: center;
+    margin: 3.77rem 0;
+  }
+
+  .service {
+    height: auto; /* undo the 8rem height for each service */
+  }
+
+  .service p {
+    font-size: 0.77rem;
+  }
+
+  .exams p, .fittings p {
+    margin-bottom: 1.54rem;
+  }
+
+  .service img {
+    margin-bottom: 1rem;
+  }
+
+  .details {
+    flex-direction: column; /* show the details vertically */
+  }
+
+  .philosophy, .appointments {
+    width: 100%;
+  }
+
+  .detailed-info {
+    font-size: 0.77rem;
+  }
+
+  .label {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem 0; /* remove the left & right padding */
+  }
+
+  .philosophy {
+    margin-bottom: 4rem;
+  }
+
+  footer.container {
+    justify-content: center;
+  }
+
+  footer span {
+    display: none;
+  }
+
+  footer img {
+    padding: 0; /* undo padding */
+  }
+}
